@@ -1,6 +1,6 @@
 ---
-title: java-agent
-description: java代理
+title: ThreadLocal
+description: 线程本地变量实现静态代码块间的数据传输
 date: 2023-1-15
 tags:	[实习项目]
 toc: true
