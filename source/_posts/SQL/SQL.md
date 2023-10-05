@@ -1,7 +1,7 @@
 ---
 title: SQL
 description: SQL（Structured Query Language，结构化查询语言）是一种用于管理关系型数据库系统的特定领域语言。它用于定义、操作和查询数据库中的数据。SQL是许多关系型数据库管理系统（RDBMS）的标准查询语言，包括MySQL、SQLite、Oracle、SQL Server和PostgreSQL等。
-date: 2022-1-1
+date: 2023-1-1
 tags:	[知识积累]
 toc: true
 finished: true
