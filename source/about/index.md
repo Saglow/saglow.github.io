@@ -1,3 +1,6 @@
-· 作者简介：方于晖，浦东川沙人，2023年本科毕业于北京航空航天大学自动化科学与电气工程学院机器人工程专业，正在专心钻研技术。
-· 手机：18721643531
-· 邮箱：fangyuhui2001@gmail.com
+oneforce.github.io@oneforce.cn
+
+
+|内容|状态|
+|----|----|
+|travis-ci|[![Build Status](https://travis-ci.org/oneforce/oneforce.github.io.svg?branch=blog)](https://travis-ci.org/oneforce/oneforce.github.io)|
