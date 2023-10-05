@@ -17,14 +17,14 @@ jobs:
       - name: Checkout hexo repo
         uses: actions/checkout@v2
         with:
-          repository: oneforce/oneforce.github.io
+          repository: Saglow/saglow.github.io
           ref: hexo
           path: hexo
 
       - name: Checkout hexo repo
         uses: actions/checkout@v2
         with:
-          repository: oneforce/oneforce.github.io
+          repository: Saglow/saglow.github.io
           ref: master
           path: ./public
 
@@ -55,10 +55,10 @@ jobs:
           echo start push
           cd ./public
           git config --global init.defaultBranch master
-          git config --global user.name "caoyanfei"
-          git config --global user.email "github@uynm.cn"
+          git config --global user.name "fangyuhui"
+          git config --global user.email "fangyuhui2001@gmail.com"
           git init .
           git add .
           git commit -m "update"
           # git push
-          git push --force --quiet "https://${{secrets.BLOG_GITHUB_TOKEN}}@github.com/oneforce/oneforce.github.io.git" master:master
+          git push --force --quiet "https://${{secrets.BLOG_GITHUB_TOKEN}}@github.com/Saglow/saglow.github.io.git" master:master
