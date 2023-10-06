@@ -29,4 +29,4 @@ comments: true
 3. 整合各个常用的UI布局、组件、Codelab项目，使得未来开发有一定模块化基础
 
 ## 应用结构图
-![1](../../images/HarmonyOS.png)
+![1](http://blog.saglow.xyz/images/HarmonyOS.png)
