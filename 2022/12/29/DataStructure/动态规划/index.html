@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>动态规划 | Saglow blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.bootcss.com/mermaid/6.0.0/mermaid.min.css"><script src="//cdn.bootcss.com/mermaid/6.0.0/mermaid.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-113549521-1','auto');ga('send','pageview');</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">动态规划</h1><a id="logo" href="/.">Saglow blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">动态规划</h1><div class="post-meta">Dec 29, 2022</div><a class="disqus-comment-count" data-disqus-identifier="2022/12/29/DataStructure/动态规划/" href="/2022/12/29/DataStructure/动态规划/#disqus_thread"></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div></div></div><div class="post-content"><p>动态规划（Dynamic Programming，简称DP）是一种常用于解决优化问题的算法思想。它通常用于解决那些可以分解为子问题且子问题具有重叠性质的问题。动态规划将问题分解为子问题，并保存子问题的解以避免重复计算，从而提高算法的效率。下面详细介绍动态规划的核心概念和步骤：</p>
+<ol>
+<li><p><strong>问题拆分</strong>：首先，将原始问题分解为一系列子问题。这些子问题应该具有相似的结构，以便可以在不同子问题上使用相同的方法或递归思想。</p>
+</li>
+<li><p><strong>定义状态</strong>：为每个子问题定义一个状态，通常是问题需要解决的某一方面的属性。状态是问题的关键信息，它们包含了问题的所有信息。</p>
+</li>
+<li><p><strong>状态转移方程</strong>：确定各个状态之间的关系，也就是从一个状态转移到另一个状态的方式。这是动态规划的核心，通常以递推的方式表达。状态转移方程描述了如何从子问题的解构建出原问题的解。</p>
+</li>
+<li><p><strong>初始化</strong>：设置初始状态的值，通常是问题的边界情况或基础情况。这些初始值用于计算更复杂的状态。</p>
+</li>
+<li><p><strong>自底向上或自顶向下计算</strong>：动态规划可以采用自底向上（Bottom-Up）或自顶向下（Top-Down）的方式来计算问题的解。</p>
+<ul>
+<li>自底向上：从最小的子问题开始计算，逐步计算更大的问题，直到得到原问题的解。</li>
+<li>自顶向下：从原问题开始，递归地解决子问题，直到最小的子问题，然后返回并合并子问题的解。</li>
+</ul>
+</li>
+<li><p><strong>保存子问题的解</strong>：动态规划算法通常使用数组、矩阵或哈希表来保存已经计算过的子问题的解，以避免重复计算。</p>
+</li>
+<li><p><strong>返回结果</strong>：根据计算得到的子问题的解，得出原问题的解。</p>
+</li>
+</ol>
+<p>动态规划常被应用于解决各种问题，例如最短路径问题、最长公共子序列问题、背包问题、编辑距离问题等。它在计算机科学、算法设计和优化问题中具有广泛的应用。</p>
+<p>总结来说，动态规划是一种通过分解问题、定义状态、构建状态转移方程、初始化和保存中间结果来解决优化问题的强大算法技巧。它能够有效地处理许多复杂的问题，提供了一种结构化的方法来解决这些问题，以及在时间和空间复杂度上的优化。</p>
+</div><p class="readmore"><a href="http://blog.oneforce.cn/online-markdown/?path=https://raw.githubusercontent.com/oneforce/oneforce.github.io/blog/source/_posts/DataStructure/动态规划.md">在微信markdown中展示</a></p><div class="tags"><a href="/tags/算法/">算法</a></div><div class="post-nav"><a class="pre" href="/2022/12/29/DataStructure/QuickSort/">快速排序</a><a class="next" href="/2022/12/27/DataStructure/常用数据结构/">常用数据结构</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'saglow';
+var disqus_identifier = '2022/12/29/DataStructure/动态规划/';
+var disqus_title = '动态规划';
+var disqus_url = 'https://saglow.github.io/2022/12/29/DataStructure/动态规划/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//saglow.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"><input type="hidden" name="si" value="https://saglow.github.io"><input name="tn" type="hidden" value="bds"><input name="cl" type="hidden" value="3"><input name="ct" type="hidden" value="2097152"><input name="s" type="hidden" value="on"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/知识积累/" style="font-size: 15px;">知识积累</a> <a href="/tags/自研项目/" style="font-size: 15px;">自研项目</a> <a href="/tags/实习项目/" style="font-size: 15px;">实习项目</a> <a href="/tags/学习/" style="font-size: 15px;">学习</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/软件工程/" style="font-size: 15px;">软件工程</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/11/13/Java/SQL监控/">SQL监控</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/02/HarmonyOS/HarmonyOS开发/">HarmonyOS开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/07/Java/redis/">redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/15/Java/ThreadLocal/">ThreadLocal</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/12/Java/Javassist/">javassist</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/08/Java/Java-agent/">java-agent</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/敏捷开发/">敏捷开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/瀑布模型/">瀑布模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/螺旋模型/">螺旋模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/04/OperationSystem/内存管理/">内存管理</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//saglow.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Saglow blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = '//hm.baidu.com/hm.js?' + '718da94a7cf34af2eac95661ab1fc06f';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script><script>(function () {
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

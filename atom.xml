@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Saglow blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://saglow.github.io/"/>
+  <updated>2023-11-22T02:55:26.544Z</updated>
+  <id>https://saglow.github.io/</id>
+  
+  <author>
+    <name>Saglow</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL监控</title>
+    <link href="https://saglow.github.io/2023/11/13/Java/SQL%E7%9B%91%E6%8E%A7/"/>
+    <id>https://saglow.github.io/2023/11/13/Java/SQL监控/</id>
+    <published>2023-11-12T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.544Z</updated>
+    
+    <summary type="html">
+    
+      通过java-agent面向切面编程找出慢SQL
+    
+    </summary>
+    
+    
+      <category term="实习项目" scheme="https://saglow.github.io/tags/%E5%AE%9E%E4%B9%A0%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HarmonyOS开发</title>
+    <link href="https://saglow.github.io/2023/07/02/HarmonyOS/HarmonyOS%E5%BC%80%E5%8F%91/"/>
+    <id>https://saglow.github.io/2023/07/02/HarmonyOS/HarmonyOS开发/</id>
+    <published>2023-07-01T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.544Z</updated>
+    
+    <summary type="html">
+    
+      自主研究开发的鸿蒙应用项目
+    
+    </summary>
+    
+    
+      <category term="自研项目" scheme="https://saglow.github.io/tags/%E8%87%AA%E7%A0%94%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis</title>
+    <link href="https://saglow.github.io/2023/06/07/Java/redis/"/>
+    <id>https://saglow.github.io/2023/06/07/Java/redis/</id>
+    <published>2023-06-06T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.544Z</updated>
+    
+    <summary type="html">
+    
+      redis
+    
+    </summary>
+    
+    
+      <category term="学习" scheme="https://saglow.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ThreadLocal</title>
+    <link href="https://saglow.github.io/2023/01/15/Java/ThreadLocal/"/>
+    <id>https://saglow.github.io/2023/01/15/Java/ThreadLocal/</id>
+    <published>2023-01-14T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.544Z</updated>
+    
+    <summary type="html">
+    
+      线程本地变量实现静态代码块间的数据传输
+    
+    </summary>
+    
+    
+      <category term="实习项目" scheme="https://saglow.github.io/tags/%E5%AE%9E%E4%B9%A0%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javassist</title>
+    <link href="https://saglow.github.io/2023/01/12/Java/Javassist/"/>
+    <id>https://saglow.github.io/2023/01/12/Java/Javassist/</id>
+    <published>2023-01-11T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.544Z</updated>
+    
+    <summary type="html">
+    
+      java字节码编程工具
+    
+    </summary>
+    
+    
+      <category term="实习项目" scheme="https://saglow.github.io/tags/%E5%AE%9E%E4%B9%A0%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java-agent</title>
+    <link href="https://saglow.github.io/2023/01/08/Java/Java-agent/"/>
+    <id>https://saglow.github.io/2023/01/08/Java/Java-agent/</id>
+    <published>2023-01-07T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.544Z</updated>
+    
+    <summary type="html">
+    
+      java代理
+    
+    </summary>
+    
+    
+      <category term="实习项目" scheme="https://saglow.github.io/tags/%E5%AE%9E%E4%B9%A0%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>敏捷开发</title>
+    <link href="https://saglow.github.io/2023/01/07/SoftwareEngineering/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/"/>
+    <id>https://saglow.github.io/2023/01/07/SoftwareEngineering/敏捷开发/</id>
+    <published>2023-01-06T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.548Z</updated>
+    
+    <summary type="html">
+    
+      敏捷开发是一种软件开发方法，强调灵活性、协作和持续改进，以满足客户需求并提供高质量的软件。敏捷方法采用迭代和增量的方式进行开发，允许团队根据反馈和变化做出调整。
+    
+    </summary>
+    
+    
+      <category term="软件工程" scheme="https://saglow.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>瀑布模型</title>
+    <link href="https://saglow.github.io/2023/01/07/SoftwareEngineering/%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://saglow.github.io/2023/01/07/SoftwareEngineering/瀑布模型/</id>
+    <published>2023-01-06T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.548Z</updated>
+    
+    <summary type="html">
+    
+      瀑布模型（Waterfall Model）是一种经典的线性软件开发方法，它将软件开发过程划分为一系列严格顺序的阶段，每个阶段在前一个阶段完成之后才开始。瀑布模型的名称源自其开发过程图形表示，呈现出瀑布般的流程。
+    
+    </summary>
+    
+    
+      <category term="软件工程" scheme="https://saglow.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>螺旋模型</title>
+    <link href="https://saglow.github.io/2023/01/07/SoftwareEngineering/%E8%9E%BA%E6%97%8B%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://saglow.github.io/2023/01/07/SoftwareEngineering/螺旋模型/</id>
+    <published>2023-01-06T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.548Z</updated>
+    
+    <summary type="html">
+    
+      螺旋模型（Spiral Model）是一种软件开发方法，结合了瀑布模型和迭代开发的概念，强调风险管理和迭代开发。螺旋模型将软件开发过程分解为多个迭代循环，每个迭代循环都包括风险评估、规划、工程和评审等阶段。这种模型的名称来源于其图形表示，形状类似螺旋。
+    
+    </summary>
+    
+    
+      <category term="软件工程" scheme="https://saglow.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>内存管理</title>
+    <link href="https://saglow.github.io/2023/01/04/OperationSystem/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
+    <id>https://saglow.github.io/2023/01/04/OperationSystem/内存管理/</id>
+    <published>2023-01-03T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.548Z</updated>
+    
+    <summary type="html">
+    
+      操作系统的内存管理机制是操作系统用来有效管理计算机内存（RAM）的一组技术和策略。内存管理的主要目标是确保多个程序可以共享和访问计算机内存，同时保持数据的完整性和安全性。
+    
+    </summary>
+    
+    
+      <category term="操作系统" scheme="https://saglow.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>死锁产生的原因和解决方案</title>
+    <link href="https://saglow.github.io/2023/01/04/OperationSystem/%E6%AD%BB%E9%94%81/"/>
+    <id>https://saglow.github.io/2023/01/04/OperationSystem/死锁/</id>
+    <published>2023-01-03T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.548Z</updated>
+    
+    <summary type="html">
+    
+      死锁（Deadlock）是在多线程或多进程并发编程中经常遇到的一种问题，它导致一组进程或线程无法继续执行，因为它们互相等待对方释放资源。死锁通常是由于资源竞争和资源分配不当引起的
+    
+    </summary>
+    
+    
+      <category term="操作系统" scheme="https://saglow.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>进程的状态</title>
+    <link href="https://saglow.github.io/2023/01/04/OperationSystem/%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%90%84%E4%B8%AA%E7%8A%B6%E6%80%81/"/>
+    <id>https://saglow.github.io/2023/01/04/OperationSystem/进程的各个状态/</id>
+    <published>2023-01-03T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.548Z</updated>
+    
+    <summary type="html">
+    
+      进程在操作系统中有不同的状态，这些状态表示了进程在其生命周期中的不同阶段和状态转换。通常，一个进程可以经历几个主要状态：创建，就绪，运行，阻塞，终止
+    
+    </summary>
+    
+    
+      <category term="操作系统" scheme="https://saglow.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线程与进程</title>
+    <link href="https://saglow.github.io/2023/01/04/OperationSystem/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/"/>
+    <id>https://saglow.github.io/2023/01/04/OperationSystem/线程与进程/</id>
+    <published>2023-01-03T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.548Z</updated>
+    
+    <summary type="html">
+    
+      进程和线程是操作系统中用于管理和执行任务的两个核心概念。它们都代表了执行中的程序，但在多任务和多线程环境下有不同的特性和用途。
+    
+    </summary>
+    
+    
+      <category term="操作系统" scheme="https://saglow.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL</title>
+    <link href="https://saglow.github.io/2023/01/01/SQL/SQL/"/>
+    <id>https://saglow.github.io/2023/01/01/SQL/SQL/</id>
+    <published>2022-12-31T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.548Z</updated>
+    
+    <summary type="html">
+    
+      SQL（Structured Query Language，结构化查询语言）是一种用于管理关系型数据库系统的特定领域语言。它用于定义、操作和查询数据库中的数据。SQL是许多关系型数据库管理系统（RDBMS）的标准查询语言，包括MySQL、SQLite、Oracle、SQL Server和PostgreSQL等。
+    
+    </summary>
+    
+    
+      <category term="知识积累" scheme="https://saglow.github.io/tags/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>贪心算法</title>
+    <link href="https://saglow.github.io/2022/12/31/DataStructure/%E8%B4%AA%E5%BF%83/"/>
+    <id>https://saglow.github.io/2022/12/31/DataStructure/贪心/</id>
+    <published>2022-12-30T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.544Z</updated>
+    
+    <summary type="html">
+    
+      贪心算法（Greedy Algorithm）是一种基于贪心策略的优化算法，通常用于解决那些可以分解为一系列子问题，且在每个子问题上都选择当前最优解以达到全局最优解的问题。贪心算法的核心思想是在每一步选择最佳的局部解，希望通过局部最优解的累积最终达到全局最优解。
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://saglow.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>快速排序</title>
+    <link href="https://saglow.github.io/2022/12/29/DataStructure/QuickSort/"/>
+    <id>https://saglow.github.io/2022/12/29/DataStructure/QuickSort/</id>
+    <published>2022-12-28T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.544Z</updated>
+    
+    <summary type="html">
+    
+      快速排序（Quick Sort）是一种高效的、分治法（Divide and Conquer）的排序算法，由英国计算机科学家Tony Hoare于1960年首次提出。它的核心思想是通过选取一个基准元素，将数组分成两个子数组，一个子数组的所有元素小于基准元素，另一个子数组的所有元素大于基准元素，然后递归地对子数组进行排序。
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://saglow.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动态规划</title>
+    <link href="https://saglow.github.io/2022/12/29/DataStructure/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <id>https://saglow.github.io/2022/12/29/DataStructure/动态规划/</id>
+    <published>2022-12-28T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.544Z</updated>
+    
+    <summary type="html">
+    
+      动态规划（Dynamic Programming，简称DP）是一种常用于解决优化问题的算法思想。它通常用于解决那些可以分解为子问题且子问题具有重叠性质的问题。动态规划将问题分解为子问题，并保存子问题的解以避免重复计算，从而提高算法的效率。
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://saglow.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用数据结构</title>
+    <link href="https://saglow.github.io/2022/12/27/DataStructure/%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>https://saglow.github.io/2022/12/27/DataStructure/常用数据结构/</id>
+    <published>2022-12-26T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.544Z</updated>
+    
+    <summary type="html">
+    
+      数据结构在计算机科学和编程中起着关键作用，用于组织和操作数据。
+    
+    </summary>
+    
+    
+      <category term="知识积累" scheme="https://saglow.github.io/tags/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Http请求</title>
+    <link href="https://saglow.github.io/2022/12/26/Net/Http/"/>
+    <id>https://saglow.github.io/2022/12/26/Net/Http/</id>
+    <published>2022-12-25T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.548Z</updated>
+    
+    <summary type="html">
+    
+      HTTP（Hypertext Transfer Protocol）是一种用于在计算机网络上传输超文本（如HTML、XML、JSON等）的协议。HTTP网络请求是一种客户端和服务器之间进行通信的方式，通常用于从服务器获取数据或将数据发送到服务器
+    
+    </summary>
+    
+    
+      <category term="知识积累" scheme="https://saglow.github.io/tags/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OSI模型</title>
+    <link href="https://saglow.github.io/2022/12/26/Net/OSI/"/>
+    <id>https://saglow.github.io/2022/12/26/Net/OSI/</id>
+    <published>2022-12-25T16:00:00.000Z</published>
+    <updated>2023-11-22T02:55:26.548Z</updated>
+    
+    <summary type="html">
+    
+      网络传输七层协议，通常称为 OSI 模型（Open Systems Interconnection model），是一种网络通信的参考模型，用于描述和组织网络通信协议的不同层次。这个模型将网络通信划分为七个不同的层次，每个层次都有其特定的功能和任务。
+    
+    </summary>
+    
+    
+      <category term="知识积累" scheme="https://saglow.github.io/tags/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
+    
+  </entry>
+  
+</feed>

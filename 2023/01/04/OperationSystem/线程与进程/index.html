@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>线程与进程 | Saglow blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.bootcss.com/mermaid/6.0.0/mermaid.min.css"><script src="//cdn.bootcss.com/mermaid/6.0.0/mermaid.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-113549521-1','auto');ga('send','pageview');</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">线程与进程</h1><a id="logo" href="/.">Saglow blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">线程与进程</h1><div class="post-meta">Jan 4, 2023</div><a class="disqus-comment-count" data-disqus-identifier="2023/01/04/OperationSystem/线程与进程/" href="/2023/01/04/OperationSystem/线程与进程/#disqus_thread"></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div></div></div><div class="post-content"><p>进程和线程是操作系统中用于管理和执行任务的两个核心概念。它们都代表了执行中的程序，但在多任务和多线程环境下有不同的特性和用途。以下是对进程和线程的详细介绍：</p>
+<p><strong>进程（Process）</strong>：</p>
+<ol>
+<li><p><strong>定义</strong>：</p>
+<ul>
+<li>进程是计算机中正在运行的程序的实例。每个进程都有独立的内存空间，包括代码、数据、栈和堆等，以及一个独立的执行上下文。</li>
+</ul>
+</li>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>进程是独立的，它们之间不会直接共享内存或资源，通信需要通过进程间通信（IPC）机制。</li>
+<li>进程有自己的地址空间，因此一个进程的崩溃通常不会影响其他进程。</li>
+<li>创建和销毁进程通常比较耗费系统资源，因为每个进程都需要独立的内存和系统资源。</li>
+<li>进程可以并行执行，因此多个进程可以在多核处理器上同时运行。</li>
+</ul>
+</li>
+<li><p><strong>用途</strong>：</p>
+<ul>
+<li>进程用于执行独立的任务，例如运行不同的应用程序或服务。每个应用程序通常作为一个独立的进程运行。</li>
+</ul>
+</li>
+</ol>
+<p><strong>线程（Thread）</strong>：</p>
+<ol>
+<li><p><strong>定义</strong>：</p>
+<ul>
+<li>线程是进程内的执行单元，它共享同一进程的内存空间和资源。一个进程可以包含多个线程，它们共享进程的代码和数据段，但拥有自己的栈和寄存器。</li>
+</ul>
+</li>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>线程是轻量级的，创建和销毁线程通常比创建和销毁进程更快，因为它们共享进程的资源。</li>
+<li>线程之间可以直接共享内存和数据，因此线程之间的通信更加高效，但也需要考虑线程同步和互斥问题。</li>
+<li>由于线程共享进程的地址空间，一个线程的错误可能会影响整个进程，导致进程崩溃。</li>
+</ul>
+</li>
+<li><p><strong>用途</strong>：</p>
+<ul>
+<li>线程用于实现并发执行，允许程序同时执行多个任务。在多核处理器上，线程可以实现并行性，提高程序的性能。</li>
+<li>线程也用于实现多种并发模型，如多线程服务器、多线程图形界面应用程序等。</li>
+</ul>
+</li>
+</ol>
+<p>总结来说，进程和线程都是用于实现并发和并行的机制，但它们在资源分配、通信和隔离方面有不同的特点。选择使用进程还是线程取决于具体的应用需求和性能要求。有时候，一个程序可能同时使用进程和线程来实现不同层次的并发和隔离。例如，一个多进程的服务器可以在每个进程内部使用多线程来处理客户请求。</p>
+</div><p class="readmore"><a href="http://blog.oneforce.cn/online-markdown/?path=https://raw.githubusercontent.com/oneforce/oneforce.github.io/blog/source/_posts/OperationSystem/线程与进程.md">在微信markdown中展示</a></p><div class="tags"><a href="/tags/操作系统/">操作系统</a></div><div class="post-nav"><a class="pre" href="/2023/01/04/OperationSystem/进程的各个状态/">进程的状态</a><a class="next" href="/2023/01/01/SQL/SQL/">SQL</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'saglow';
+var disqus_identifier = '2023/01/04/OperationSystem/线程与进程/';
+var disqus_title = '线程与进程';
+var disqus_url = 'https://saglow.github.io/2023/01/04/OperationSystem/线程与进程/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//saglow.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"><input type="hidden" name="si" value="https://saglow.github.io"><input name="tn" type="hidden" value="bds"><input name="cl" type="hidden" value="3"><input name="ct" type="hidden" value="2097152"><input name="s" type="hidden" value="on"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/知识积累/" style="font-size: 15px;">知识积累</a> <a href="/tags/自研项目/" style="font-size: 15px;">自研项目</a> <a href="/tags/实习项目/" style="font-size: 15px;">实习项目</a> <a href="/tags/学习/" style="font-size: 15px;">学习</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/软件工程/" style="font-size: 15px;">软件工程</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/11/13/Java/SQL监控/">SQL监控</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/02/HarmonyOS/HarmonyOS开发/">HarmonyOS开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/07/Java/redis/">redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/15/Java/ThreadLocal/">ThreadLocal</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/12/Java/Javassist/">javassist</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/08/Java/Java-agent/">java-agent</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/敏捷开发/">敏捷开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/瀑布模型/">瀑布模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/螺旋模型/">螺旋模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/04/OperationSystem/内存管理/">内存管理</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//saglow.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Saglow blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = '//hm.baidu.com/hm.js?' + '718da94a7cf34af2eac95661ab1fc06f';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script><script>(function () {
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>快速排序 | Saglow blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.bootcss.com/mermaid/6.0.0/mermaid.min.css"><script src="//cdn.bootcss.com/mermaid/6.0.0/mermaid.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-113549521-1','auto');ga('send','pageview');</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">快速排序</h1><a id="logo" href="/.">Saglow blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">快速排序</h1><div class="post-meta">Dec 29, 2022</div><a class="disqus-comment-count" data-disqus-identifier="2022/12/29/DataStructure/QuickSort/" href="/2022/12/29/DataStructure/QuickSort/#disqus_thread"></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div></div></div><div class="post-content"><p>快速排序（Quick Sort）是一种高效的、分治法（Divide and Conquer）的排序算法，由英国计算机科学家Tony Hoare于1960年首次提出。它的核心思想是通过选取一个基准元素，将数组分成两个子数组，一个子数组的所有元素小于基准元素，另一个子数组的所有元素大于基准元素，然后递归地对子数组进行排序。</p>
+<p>以下是快速排序算法的详细步骤：</p>
+<ol>
+<li><p><strong>选择基准元素</strong>：从数组中选择一个元素作为基准元素。通常选择第一个元素、最后一个元素或随机选择都是合理的选择。</p>
+</li>
+<li><p><strong>分区（Partitioning）</strong>：将数组重新排列，使得比基准元素小的元素在左侧，比基准元素大的元素在右侧。同时，基准元素所在的位置已经确定，它不再参与后续的排序过程。分区的过程可以使用两个指针来实现，一个从数组的左侧开始移动，另一个从右侧开始移动，直到它们相遇。</p>
+</li>
+<li><p><strong>递归排序</strong>：分区后，将左右两个子数组分别递归地应用快速排序算法，对子数组进行排序。</p>
+</li>
+<li><p><strong>合并</strong>：递归排序的结果将左子数组和右子数组合并成一个有序的数组。由于基准元素已经在正确的位置，无需再次处理。</p>
+</li>
+<li><p><strong>递归终止条件</strong>：递归终止条件是子数组的长度为1或0，因为这些数组已经是有序的。</p>
+</li>
+</ol>
+<p>快速排序的关键在于分区操作，如何选择合适的基准元素以及如何高效地进行分区是算法性能的关键。快速排序的平均时间复杂度为O(n log n)，其中n是数组的长度。在最坏情况下，即每次选择的基准元素都是数组中的最大或最小元素时，时间复杂度为O(n^2)，但这种情况发生的概率非常低。通常情况下，快速排序是一种高效的排序算法，它在实际应用中表现出色。</p>
+<p>快速排序的特点包括原地排序（不需要额外的内存空间），不稳定性（相同元素的相对位置可能发生变化），以及适用于大规模数据集。这使得它成为许多编程语言和标准库中的排序算法的首选之一。</p>
+</div><p class="readmore"><a href="http://blog.oneforce.cn/online-markdown/?path=https://raw.githubusercontent.com/oneforce/oneforce.github.io/blog/source/_posts/DataStructure/QuickSort.md">在微信markdown中展示</a></p><div class="tags"><a href="/tags/算法/">算法</a></div><div class="post-nav"><a class="pre" href="/2022/12/31/DataStructure/贪心/">贪心算法</a><a class="next" href="/2022/12/29/DataStructure/动态规划/">动态规划</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'saglow';
+var disqus_identifier = '2022/12/29/DataStructure/QuickSort/';
+var disqus_title = '快速排序';
+var disqus_url = 'https://saglow.github.io/2022/12/29/DataStructure/QuickSort/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//saglow.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"><input type="hidden" name="si" value="https://saglow.github.io"><input name="tn" type="hidden" value="bds"><input name="cl" type="hidden" value="3"><input name="ct" type="hidden" value="2097152"><input name="s" type="hidden" value="on"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/知识积累/" style="font-size: 15px;">知识积累</a> <a href="/tags/自研项目/" style="font-size: 15px;">自研项目</a> <a href="/tags/实习项目/" style="font-size: 15px;">实习项目</a> <a href="/tags/学习/" style="font-size: 15px;">学习</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/软件工程/" style="font-size: 15px;">软件工程</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/11/13/Java/SQL监控/">SQL监控</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/02/HarmonyOS/HarmonyOS开发/">HarmonyOS开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/07/Java/redis/">redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/15/Java/ThreadLocal/">ThreadLocal</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/12/Java/Javassist/">javassist</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/08/Java/Java-agent/">java-agent</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/敏捷开发/">敏捷开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/瀑布模型/">瀑布模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/螺旋模型/">螺旋模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/04/OperationSystem/内存管理/">内存管理</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//saglow.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Saglow blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = '//hm.baidu.com/hm.js?' + '718da94a7cf34af2eac95661ab1fc06f';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script><script>(function () {
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>OSI模型 | Saglow blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.bootcss.com/mermaid/6.0.0/mermaid.min.css"><script src="//cdn.bootcss.com/mermaid/6.0.0/mermaid.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-113549521-1','auto');ga('send','pageview');</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">OSI模型</h1><a id="logo" href="/.">Saglow blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">OSI模型</h1><div class="post-meta">Dec 26, 2022</div><a class="disqus-comment-count" data-disqus-identifier="2022/12/26/Net/OSI/" href="/2022/12/26/Net/OSI/#disqus_thread"></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div></div></div><div class="post-content"><p>网络传输七层协议，通常称为 OSI 模型（Open Systems Interconnection model），是一种网络通信的参考模型，用于描述和组织网络通信协议的不同层次。这个模型将网络通信划分为七个不同的层次，每个层次都有其特定的功能和任务。下面是对每个层次的详细介绍：</p>
+<ol>
+<li><p><strong>物理层（Physical Layer）</strong>：</p>
+<ul>
+<li>功能：物理层负责定义物理媒体的传输方式，如电压、电流、光信号等，以及传输数据的物理接口标准。</li>
+<li>示例：Ethernet、USB、光纤等。</li>
+</ul>
+</li>
+<li><p><strong>数据链路层（Data Link Layer）</strong>：</p>
+<ul>
+<li>功能：数据链路层负责在物理媒体上可靠地传输数据帧。它提供错误检测和纠正，以及地址分配和流量控制。</li>
+<li>示例：以太网、Wi-Fi、PPP（Point-to-Point Protocol）等。</li>
+</ul>
+</li>
+<li><p><strong>网络层（Network Layer）</strong>：</p>
+<ul>
+<li>功能：网络层负责在不同的网络之间路由数据包，实现端到端的数据传输。它定义了数据包的格式和路由算法。</li>
+<li>示例：IP（Internet Protocol）、IPv4、IPv6、路由器等。</li>
+</ul>
+</li>
+<li><p><strong>传输层（Transport Layer）</strong>：</p>
+<ul>
+<li>功能：传输层负责端到端的通信，提供数据传输的可靠性和错误检测。它还负责多路复用和分解数据流。</li>
+<li>示例：TCP（Transmission Control Protocol）、UDP（User Datagram Protocol）。</li>
+</ul>
+</li>
+<li><p><strong>会话层（Session Layer）</strong>：</p>
+<ul>
+<li>功能：会话层负责建立、管理和终止通信会话，以确保数据传输的顺序和完整性。它处理会话层面的错误和恢复。</li>
+<li>示例：NetBIOS、RPC（Remote Procedure Call）。</li>
+</ul>
+</li>
+<li><p><strong>表示层（Presentation Layer）</strong>：</p>
+<ul>
+<li>功能：表示层负责数据的编码、解码和加密，以确保数据在不同系统之间的互操作性。它还负责数据的压缩和解压缩。</li>
+<li>示例：TLS/SSL、JPEG、ASCII等。</li>
+</ul>
+</li>
+<li><p><strong>应用层（Application Layer）</strong>：</p>
+<ul>
+<li>功能：应用层是最高层，负责定义网络应用程序和用户之间的通信。它包括各种应用协议，如HTTP、FTP、SMTP等。</li>
+<li>示例：HTTP、FTP、SMTP、DNS等。</li>
+</ul>
+</li>
+</ol>
+<p>每个层次都构建在下一层的基础之上，并通过使用下一层提供的服务来完成其功能。这种分层结构使得网络通信的设计和维护更加模块化和可扩展，不同层次的协议可以独立地进行开发和更新，而不会影响其他层次。此外，它还提供了一种通用的参考框架，以便不同供应商和开发者之间更好地协作和实现互操作性的网络通信。</p>
+</div><p class="readmore"><a href="http://blog.oneforce.cn/online-markdown/?path=https://raw.githubusercontent.com/oneforce/oneforce.github.io/blog/source/_posts/Net/OSI.md">在微信markdown中展示</a></p><div class="tags"><a href="/tags/知识积累/">知识积累</a></div><div class="post-nav"><a class="pre" href="/2022/12/26/Net/Http/">Http请求</a><a class="next" href="/2022/01/04/Linux/Linux常用指令/">Linux</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'saglow';
+var disqus_identifier = '2022/12/26/Net/OSI/';
+var disqus_title = 'OSI模型';
+var disqus_url = 'https://saglow.github.io/2022/12/26/Net/OSI/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//saglow.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"><input type="hidden" name="si" value="https://saglow.github.io"><input name="tn" type="hidden" value="bds"><input name="cl" type="hidden" value="3"><input name="ct" type="hidden" value="2097152"><input name="s" type="hidden" value="on"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/知识积累/" style="font-size: 15px;">知识积累</a> <a href="/tags/自研项目/" style="font-size: 15px;">自研项目</a> <a href="/tags/实习项目/" style="font-size: 15px;">实习项目</a> <a href="/tags/学习/" style="font-size: 15px;">学习</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/软件工程/" style="font-size: 15px;">软件工程</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/11/13/Java/SQL监控/">SQL监控</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/02/HarmonyOS/HarmonyOS开发/">HarmonyOS开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/07/Java/redis/">redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/15/Java/ThreadLocal/">ThreadLocal</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/12/Java/Javassist/">javassist</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/08/Java/Java-agent/">java-agent</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/敏捷开发/">敏捷开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/瀑布模型/">瀑布模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/螺旋模型/">螺旋模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/04/OperationSystem/内存管理/">内存管理</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//saglow.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Saglow blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = '//hm.baidu.com/hm.js?' + '718da94a7cf34af2eac95661ab1fc06f';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script><script>(function () {
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Http请求 | Saglow blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.bootcss.com/mermaid/6.0.0/mermaid.min.css"><script src="//cdn.bootcss.com/mermaid/6.0.0/mermaid.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-113549521-1','auto');ga('send','pageview');</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Http请求</h1><a id="logo" href="/.">Saglow blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Http请求</h1><div class="post-meta">Dec 26, 2022</div><a class="disqus-comment-count" data-disqus-identifier="2022/12/26/Net/Http/" href="/2022/12/26/Net/Http/#disqus_thread"></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div></div></div><div class="post-content"><p>HTTP（Hypertext Transfer Protocol）是一种用于在计算机网络上传输超文本（如HTML、XML、JSON等）的协议。HTTP网络请求是一种客户端和服务器之间进行通信的方式，通常用于从服务器获取数据或将数据发送到服务器。以下是HTTP网络请求的详细介绍：</p>
+<ol>
+<li><p><strong>请求方法（HTTP Methods）</strong>：</p>
+<ul>
+<li><strong>GET</strong>: 用于从服务器获取数据。通常用于读取资源，不应该对服务器状态产生副作用。</li>
+<li><strong>POST</strong>: 用于向服务器提交数据，通常用于创建新资源或更新现有资源。</li>
+<li><strong>PUT</strong>: 用于将数据放置到指定URI上，通常用于创建或更新资源。</li>
+<li><strong>DELETE</strong>: 用于删除服务器上的资源。</li>
+<li><strong>PATCH</strong>: 用于部分更新资源。</li>
+<li>等等。HTTP定义了多种请求方法，每种方法有不同的语义和用途。</li>
+</ul>
+</li>
+<li><p><strong>URI（Uniform Resource Identifier）</strong>：</p>
+<ul>
+<li>URI标识了要访问的资源的位置。它通常包括协议（如HTTP或HTTPS）、主机名、端口号和路径等信息。</li>
+<li>示例：<code>https://www.example.com/api/data</code></li>
+</ul>
+</li>
+<li><p><strong>请求头（HTTP Headers）</strong>：</p>
+<ul>
+<li>请求头包含了关于请求的元信息，如Accept（指定可以接受的响应内容类型）、Authorization（用于身份验证）、User-Agent（标识客户端应用程序）、等等。</li>
+</ul>
+</li>
+<li><p><strong>请求体（Request Body）</strong>：</p>
+<ul>
+<li>对于POST、PUT等方法，请求体包含要发送到服务器的数据，通常是表单数据、JSON或其他格式的数据。</li>
+</ul>
+</li>
+<li><p><strong>响应状态码（HTTP Status Codes）</strong>：</p>
+<ul>
+<li>服务器在响应中返回一个状态码，指示请求的结果。常见的状态码包括200（成功）、404（未找到）、500（服务器内部错误）等。</li>
+</ul>
+</li>
+<li><p><strong>响应头（HTTP Response Headers）</strong>：</p>
+<ul>
+<li>响应头包含了关于响应的元信息，如Content-Type（指定响应的内容类型）、Content-Length（指定响应体的长度）、等等。</li>
+</ul>
+</li>
+<li><p><strong>响应体（Response Body）</strong>：</p>
+<ul>
+<li>响应体包含了从服务器返回的实际数据，通常是HTML页面、JSON数据、XML等。</li>
+</ul>
+</li>
+<li><p><strong>状态管理</strong>：</p>
+<ul>
+<li>HTTP是无状态协议，每个请求都独立处理，不保留之前请求的状态信息。为了实现状态管理，Web应用通常使用Cookies或Session等机制。</li>
+</ul>
+</li>
+<li><p><strong>安全性</strong>：</p>
+<ul>
+<li>HTTP通信是明文的，可以容易地被拦截和窃取。为了提高安全性，常使用HTTPS协议，它使用加密来保护通信的隐私和完整性。</li>
+</ul>
+</li>
+<li><p><strong>RESTful API</strong>：</p>
+<ul>
+<li>基于HTTP的RESTful API是一种常见的方式，用于创建和操作Web服务。它使用HTTP请求方法和URI来表示资源和操作，并遵循一组约定，如使用GET请求来获取资源，使用POST请求来创建资源等。</li>
+</ul>
+</li>
+</ol>
+<p>HTTP网络请求是现代Web应用程序的基础，开发人员可以使用各种编程语言和工具来发起和处理这些请求，以实现与服务器的数据交换和通信。</p>
+</div><p class="readmore"><a href="http://blog.oneforce.cn/online-markdown/?path=https://raw.githubusercontent.com/oneforce/oneforce.github.io/blog/source/_posts/Net/Http.md">在微信markdown中展示</a></p><div class="tags"><a href="/tags/知识积累/">知识积累</a></div><div class="post-nav"><a class="pre" href="/2022/12/27/DataStructure/常用数据结构/">常用数据结构</a><a class="next" href="/2022/12/26/Net/OSI/">OSI模型</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'saglow';
+var disqus_identifier = '2022/12/26/Net/Http/';
+var disqus_title = 'Http请求';
+var disqus_url = 'https://saglow.github.io/2022/12/26/Net/Http/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//saglow.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"><input type="hidden" name="si" value="https://saglow.github.io"><input name="tn" type="hidden" value="bds"><input name="cl" type="hidden" value="3"><input name="ct" type="hidden" value="2097152"><input name="s" type="hidden" value="on"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/知识积累/" style="font-size: 15px;">知识积累</a> <a href="/tags/自研项目/" style="font-size: 15px;">自研项目</a> <a href="/tags/实习项目/" style="font-size: 15px;">实习项目</a> <a href="/tags/学习/" style="font-size: 15px;">学习</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/软件工程/" style="font-size: 15px;">软件工程</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/11/13/Java/SQL监控/">SQL监控</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/02/HarmonyOS/HarmonyOS开发/">HarmonyOS开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/07/Java/redis/">redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/15/Java/ThreadLocal/">ThreadLocal</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/12/Java/Javassist/">javassist</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/08/Java/Java-agent/">java-agent</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/敏捷开发/">敏捷开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/瀑布模型/">瀑布模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/螺旋模型/">螺旋模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/04/OperationSystem/内存管理/">内存管理</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//saglow.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Saglow blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = '//hm.baidu.com/hm.js?' + '718da94a7cf34af2eac95661ab1fc06f';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script><script>(function () {
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

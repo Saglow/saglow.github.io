@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>瀑布模型 | Saglow blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.bootcss.com/mermaid/6.0.0/mermaid.min.css"><script src="//cdn.bootcss.com/mermaid/6.0.0/mermaid.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-113549521-1','auto');ga('send','pageview');</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">瀑布模型</h1><a id="logo" href="/.">Saglow blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">瀑布模型</h1><div class="post-meta">Jan 7, 2023</div><a class="disqus-comment-count" data-disqus-identifier="2023/01/07/SoftwareEngineering/瀑布模型/" href="/2023/01/07/SoftwareEngineering/瀑布模型/#disqus_thread"></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div></div></div><div class="post-content"><p>瀑布模型（Waterfall Model）是一种经典的线性软件开发方法，它将软件开发过程划分为一系列严格顺序的阶段，每个阶段在前一个阶段完成之后才开始。瀑布模型的名称源自其开发过程图形表示，呈现出瀑布般的流程。以下是对瀑布模型的详细介绍：</p>
+<p><strong>瀑布模型的阶段</strong>：</p>
+<ol>
+<li><p><strong>需求分析（Requirements Analysis）</strong>：</p>
+<ul>
+<li>在项目开始时，团队与客户或利益相关方合作，收集并详细定义项目的需求和目标。</li>
+<li>结果是一个需求文档，其中包括功能规格、设计约束和项目计划。</li>
+</ul>
+</li>
+<li><p><strong>系统设计（System Design）</strong>：</p>
+<ul>
+<li>根据需求文档，系统设计阶段负责定义系统的整体结构和架构，包括硬件和软件组件。</li>
+<li>设计文档描述了系统的架构、模块划分、数据库设计等。</li>
+</ul>
+</li>
+<li><p><strong>编码和实现（Coding and Implementation）</strong>：</p>
+<ul>
+<li>在此阶段，开发团队根据系统设计文档的要求，开始编写和实现实际的源代码。</li>
+<li>开发人员负责将设计文档中的概念转化为可执行的程序代码。</li>
+</ul>
+</li>
+<li><p><strong>测试（Testing）</strong>：</p>
+<ul>
+<li>测试阶段旨在验证软件是否满足需求并且没有严重的缺陷。测试包括单元测试、集成测试、系统测试和验收测试。</li>
+<li>缺陷修复是测试阶段的一个关键活动。</li>
+</ul>
+</li>
+<li><p><strong>部署（Deployment）</strong>：</p>
+<ul>
+<li>在软件通过测试并且满足质量标准后，它被部署到目标环境中，以供最终用户使用。</li>
+<li>部署阶段还包括培训用户、创建文档和提供支持。</li>
+</ul>
+</li>
+<li><p><strong>维护（Maintenance）</strong>：</p>
+<ul>
+<li>软件维护是一个持续的阶段，包括修复缺陷、增加新特性和更新文档。</li>
+<li>在软件生命周期的这个阶段，可能会出现不断的改进和更新。</li>
+</ul>
+</li>
+</ol>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>结构化和顺序性：瀑布模型提供了明确的开发流程，有助于项目管理和跟踪进度。</li>
+<li>适用于简单项目：对于小型和较简单的项目，瀑布模型可能是一种有效的开发方法。</li>
+<li>易于控制：每个阶段都有明确的交付成果和标准，易于管理和控制项目。</li>
+</ul>
+<p><strong>挑战和注意事项</strong>：</p>
+<ul>
+<li>风险管理：瀑布模型在项目开始时定义了所有需求，对于需求的变更和风险的管理较为困难。</li>
+<li>客户参与度：客户通常在需求定义阶段参与，而在后续阶段较少参与，可能导致需求不符合最终用户的实际需求。</li>
+<li>适应性：瀑布模型不太适合对需求变更敏感或复杂的项目，因为它缺乏灵活性。</li>
+</ul>
+<p>总之，瀑布模型是一种传统的软件开发方法，适用于一些较简单的项目，但在面对需求变更频繁或复杂性较高的项目时可能不太适合。在实际应用中，许多组织使用混合方法或采用更灵活的开发方法，以更好地满足项目需求和变化。</p>
+</div><p class="readmore"><a href="http://blog.oneforce.cn/online-markdown/?path=https://raw.githubusercontent.com/oneforce/oneforce.github.io/blog/source/_posts/SoftwareEngineering/瀑布模型.md">在微信markdown中展示</a></p><div class="tags"><a href="/tags/软件工程/">软件工程</a></div><div class="post-nav"><a class="pre" href="/2023/01/07/SoftwareEngineering/敏捷开发/">敏捷开发</a><a class="next" href="/2023/01/07/SoftwareEngineering/螺旋模型/">螺旋模型</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'saglow';
+var disqus_identifier = '2023/01/07/SoftwareEngineering/瀑布模型/';
+var disqus_title = '瀑布模型';
+var disqus_url = 'https://saglow.github.io/2023/01/07/SoftwareEngineering/瀑布模型/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//saglow.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"><input type="hidden" name="si" value="https://saglow.github.io"><input name="tn" type="hidden" value="bds"><input name="cl" type="hidden" value="3"><input name="ct" type="hidden" value="2097152"><input name="s" type="hidden" value="on"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/知识积累/" style="font-size: 15px;">知识积累</a> <a href="/tags/自研项目/" style="font-size: 15px;">自研项目</a> <a href="/tags/实习项目/" style="font-size: 15px;">实习项目</a> <a href="/tags/学习/" style="font-size: 15px;">学习</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/软件工程/" style="font-size: 15px;">软件工程</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/11/13/Java/SQL监控/">SQL监控</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/02/HarmonyOS/HarmonyOS开发/">HarmonyOS开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/07/Java/redis/">redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/15/Java/ThreadLocal/">ThreadLocal</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/12/Java/Javassist/">javassist</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/08/Java/Java-agent/">java-agent</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/敏捷开发/">敏捷开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/瀑布模型/">瀑布模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/螺旋模型/">螺旋模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/04/OperationSystem/内存管理/">内存管理</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//saglow.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Saglow blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = '//hm.baidu.com/hm.js?' + '718da94a7cf34af2eac95661ab1fc06f';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script><script>(function () {
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

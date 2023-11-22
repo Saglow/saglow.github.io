@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>SQL监控 | Saglow blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.bootcss.com/mermaid/6.0.0/mermaid.min.css"><script src="//cdn.bootcss.com/mermaid/6.0.0/mermaid.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-113549521-1','auto');ga('send','pageview');</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">SQL监控</h1><a id="logo" href="/.">Saglow blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">SQL监控</h1><div class="post-meta">Nov 13, 2023</div><a class="disqus-comment-count" data-disqus-identifier="2023/11/13/Java/SQL监控/" href="/2023/11/13/Java/SQL监控/#disqus_thread"></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Sql-监控项目"><span class="toc-text">Sql 监控项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目背景"><span class="toc-text">项目背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目难点"><span class="toc-text">项目难点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目方案"><span class="toc-text">项目方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用java-agent的方案来实现"><span class="toc-text">使用java agent的方案来实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java的字节码编程"><span class="toc-text">java的字节码编程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统架构图"><span class="toc-text">系统架构图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实施中的难点"><span class="toc-text">实施中的难点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#保存执行开始时间"><span class="toc-text">保存执行开始时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重写需要的类"><span class="toc-text">重写需要的类</span></a></li></ol></li></ol></li></ol></div></div><div class="post-content"><ul>
+<li><a href="https://github.com/Saglow/sql-monitor-agent" target="_blank" rel="noopener">项目源码</a></li>
+</ul>
+<h1 id="Sql-监控项目"><a href="#Sql-监控项目" class="headerlink" title="Sql 监控项目"></a>Sql 监控项目</h1><h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>项目人员比较多, 微服务有20+ 很多项目多出现了sql查询慢的问题.<br>技术总监希望在上线前就解决所有的sql查询慢的问题</p>
+<ol>
+<li>mysql自带的监控, 不能做小于1s的</li>
+<li>druid 自带慢sql的监控, 但是仅小部分项目使用<br>大部分项目还是使用HikariCP</li>
+<li>找出来, 大家也不看. 测试团队希望阻塞</li>
+<li>想仅部署在开发/测试环境上, 生产不需要</li>
+<li>不想改代码</li>
+</ol>
+<h2 id="项目难点"><a href="#项目难点" class="headerlink" title="项目难点"></a>项目难点</h2><ol>
+<li>各个微服务的框架使用的比较凌乱. 整理后连接池的解决方案有<ol>
+<li>HikariCP</li>
+<li>druid(阿里)</li>
+<li>dbcp(apache)</li>
+</ol>
+</li>
+<li>技术负责人和测试负责人希望慢sql出现, 就出现异常, 不要用日志/记录的方式. 这样开发人员能立即解决</li>
+<li>不能修改现在的项目的代码</li>
+<li>相关功能想仅部署在开发/测试环境上, 生产不需要</li>
+</ol>
+<h2 id="项目方案"><a href="#项目方案" class="headerlink" title="项目方案"></a>项目方案</h2><h3 id="使用java-agent的方案来实现"><a href="#使用java-agent的方案来实现" class="headerlink" title="使用java agent的方案来实现"></a>使用<code>java agent</code>的方案来实现</h3><ol>
+<li>使用agent, 可以灵活配置. 仅配置在开发/测试环境, 生产环境无影响</li>
+<li>我们可以不用关注特定的框架, 可以对statement类来做整体监控. 仅需要判断class 是否继承statement.就可以对所有的sql监控</li>
+<li>无需项目调整和代码修改.</li>
+</ol>
+<h3 id="java的字节码编程"><a href="#java的字节码编程" class="headerlink" title="java的字节码编程"></a>java的字节码编程</h3><p>java中有很多字节码编程工具<code>javassist</code>,<code>Byte Buddy</code>,<code>Cglib</code>. 要满足下面几个特点, 选用了<code>javassist</code></p>
+<ol>
+<li>小, 可以将源码打入jar中</li>
+<li>简单, 学习曲线底</li>
+<li>可读性强</li>
+</ol>
+<h2 id="系统架构图"><a href="#系统架构图" class="headerlink" title="系统架构图"></a>系统架构图</h2><p><img src="http://www.plantuml.com/plantuml/png/jLNDJjj04BxlKwp2eHU2H8-M6W5LUw8I4jmuRUnDC7NiO2yet5fAb982eGKI1EA7jXGkX5HKj2H4l4nsRTwYun-iRe4q1-f3bEpCzpCpEywGmuZDPdC6UfA7Bxggvud9SABJRFAFMmbC74nGsYhWn3IP8xovuMwS972VeMUdMDOcyqX2ZSyOmrbgiW2NbcFF3U8uBtM3JjZ4T3AMdQDsaAVAUQ03YReJacXoS6BAfaGRjLHYXE51EJvcK_XDjN566CtTEg68cXg6AkHaiTaGAtNUN7yrxyo4V5c4q6GobLOmNplZvHDaMenYWsOOjZ9GKQTz3Gr8-Xw9N-YpGg4mC4riTtjHL2_vLGNT55VSTjtT-SMBvt3AAmiW4-ZxL8YeJ9y3Ry25uKa7MdcRveXk1YU1e3L7xIZ3byA15kvSRNkDTw0VvVDI6xY3h9W_8bMXWCzxl7o0HRK1DkvhVf0R-r4HZXvYCDmtwWzun9YbsAitU7iJ6YIMZht3PNxrXXz_4BMBczgF6FANyNwiIQ6mQ_5WnTuYRpML7fdbuk97nSaKzijy_rLKJztlBR5rnjU-mQTOBl7wDXGDXtSXcXBPuQSrhxpW7hmDxRXBbo6gq_e2Xn8mRf9SbfPCfhH1uBlUvQTR3zhN_7789_G1HZMOd6uwr6OZ5CP45ImgdtZnABO7rqoSRyOeQZWKzutfvciSTN5rN-mUnOczZYYyMCxjsW3-GI9f8h9vgaH4tS1nxJ9SDcXbxeQxLzZLN1X8fh9AH0AtJgwesv2et6vfEGxTUYsa14UFiHPIok10905-WJyKkaVbAUHT5BthKlZwYQtqOr7UuQNcYu9Ayqotp9x6-1zsn5lzoIlLS5E0uF7MP3Z3gFtFBJ4r507Je25pgmXUc9CATblhOdSV_H59eo50mf_ZRm00" alt="1"></p>
+<h2 id="实施中的难点"><a href="#实施中的难点" class="headerlink" title="实施中的难点"></a>实施中的难点</h2><h3 id="保存执行开始时间"><a href="#保存执行开始时间" class="headerlink" title="保存执行开始时间"></a>保存执行开始时间</h3><p>由于insertBefore的特定插入方式, 无法在insertAfter代码中使用. 所以只能使用threadlocal的方式保存</p>
+<ul>
+<li><p><strong>错误</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Long startTime = System.currentTime();</span><br><span class="line"><span class="comment">// 原始代码</span></span><br><span class="line">...</span><br><span class="line">Long runTime = System.currentTime() - startTime;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>正确</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="comment">// startTime的作用域就是在这个&#123;&#125;之内</span></span><br><span class="line">Long startTime = System.currentTime();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 原始代码</span></span><br><span class="line">...</span><br><span class="line"><span class="comment">// Long runTime = System.currentTime() - startTime;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="重写需要的类"><a href="#重写需要的类" class="headerlink" title="重写需要的类"></a>重写需要的类</h3><p>由于使用各种ORM的框架, 但是本质都是基于<code>statement</code>的操作. 所以需要判断是否继承<code>statement</code>的子类</p>
+</div><p class="readmore"><a href="http://blog.oneforce.cn/online-markdown/?path=https://raw.githubusercontent.com/oneforce/oneforce.github.io/blog/source/_posts/Java/SQL监控.md">在微信markdown中展示</a></p><div class="tags"><a href="/tags/实习项目/">实习项目</a></div><div class="post-nav"><a class="next" href="/2023/07/02/HarmonyOS/HarmonyOS开发/">HarmonyOS开发</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'saglow';
+var disqus_identifier = '2023/11/13/Java/SQL监控/';
+var disqus_title = 'SQL监控';
+var disqus_url = 'https://saglow.github.io/2023/11/13/Java/SQL监控/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//saglow.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"><input type="hidden" name="si" value="https://saglow.github.io"><input name="tn" type="hidden" value="bds"><input name="cl" type="hidden" value="3"><input name="ct" type="hidden" value="2097152"><input name="s" type="hidden" value="on"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/知识积累/" style="font-size: 15px;">知识积累</a> <a href="/tags/自研项目/" style="font-size: 15px;">自研项目</a> <a href="/tags/实习项目/" style="font-size: 15px;">实习项目</a> <a href="/tags/学习/" style="font-size: 15px;">学习</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/软件工程/" style="font-size: 15px;">软件工程</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/11/13/Java/SQL监控/">SQL监控</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/02/HarmonyOS/HarmonyOS开发/">HarmonyOS开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/07/Java/redis/">redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/15/Java/ThreadLocal/">ThreadLocal</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/12/Java/Javassist/">javassist</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/08/Java/Java-agent/">java-agent</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/敏捷开发/">敏捷开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/瀑布模型/">瀑布模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/SoftwareEngineering/螺旋模型/">螺旋模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/04/OperationSystem/内存管理/">内存管理</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//saglow.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Saglow blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = '//hm.baidu.com/hm.js?' + '718da94a7cf34af2eac95661ab1fc06f';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script><script>(function () {
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
